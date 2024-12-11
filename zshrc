@@ -55,3 +55,4 @@ type starship_zle-keymap-select >/dev/null || \
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh_plugins/zsh-vi-mode.zsh
+alias gacp='git add . && git commit -m "autocommit" && git push origin main'

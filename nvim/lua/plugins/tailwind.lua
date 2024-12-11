@@ -1,16 +1,16 @@
+-- setup tailwindcss for dioxus
 return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       local new = {
-        servers = {
+        server = {
           tailwindcss = {
             settings = {
               tailwindCSS = {
                 experimental = {
                   classRegex = {
                     'class: "(.*)"',
-                    'className= "(.*)"',
                   },
                 },
                 includeLanguages = {
@@ -20,7 +20,7 @@ return {
               },
             },
             filetypes = {
-              "ru",
+              "rust",
               "html",
               "typescriptreact",
             },

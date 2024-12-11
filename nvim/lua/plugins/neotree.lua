@@ -5,6 +5,7 @@ return {
       event_handlers = {
         {
           event = "file_opened",
+
           handler = function(_file_path)
             -- auto close
             -- vim.cmd("Neotree close")
