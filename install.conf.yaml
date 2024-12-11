@@ -1,11 +1,28 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
 - clean: ['~']
 
 - link:
     ~/.profile: profile
     ~/.bashrc: bashrc
-    ~/.bash_logout: bash_logout
     ~/.gitconfig: gitconfig
-    ~/.zprofile: zprofile
     ~/.zshrc: zshrc
+    ~/.zsh_plugins: zsh_plugins
+    ~/.config/nvim: nvim
+    ~/.config/starship.toml: starship.toml
+
+    /mnt/c/Users/timsl/.wezterm.lua: 
+      path: wezterm.lua
+      if: test -d /mnt/c/Users/timsl
+
+    /mnt/c/Users/Tim/.wezterm.lua: 
+      path: wezterm.lua
+      if: test -d /mnt/c/Users/Tim
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
 
 
