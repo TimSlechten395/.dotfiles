@@ -23,6 +23,7 @@
       if: test -d /mnt/c/Users/Tim
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - [rm /mnt/c/Users/Tim/.config/wezterm && cp wezterm /mnt/c/Users/Tim/.config/wezterm]
+    - [rm /mnt/c/Users/timsl/.config/wezterm && cp wezterm.lua /mnt/c/Users/timsl/.config/wezterm]
 
 

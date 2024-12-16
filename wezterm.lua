@@ -35,7 +35,7 @@ config.window_padding = {
 config.enable_scroll_bar = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
---config.freetype_load_target = "HorizontalLcd"
+config.freetype_load_target = "HorizontalLcd"
 
 -- Show which key table is active in the status area
 -- wezterm.on("update-right-status", function(window, pane)
@@ -47,34 +47,41 @@ config.tab_bar_at_bottom = true
 -- 	window:set_right_status(name or "")
 -- end)
 
-wezterm.on("user-var-changed", function(window, pane, name, value)
-	wezterm.log_info("got value", "var", name, value)
-	--pane:split()
-end)
+-- wezterm.on("user-var-changed", function(window, pane, name, value)
+-- 	wezterm.log_info("got value", name, value)
+--     if
+-- end)
 -- local w = require 'wezterm'
 -- local a = w.action
--- local function is_inside_vim(pane)
--- 		return pane:get_user_vars().IS_NVIM == "true" or pane:get_foreground_process_name():find("v")
--- end
--- local function is_outside_vim(pane) return not is_inside_vim(pane) end
--- local function bind_if(cond, key, mods, action)
---   local function callback (win, pane)
---     if cond(pane) then
---       win:perform_action(action, pane)
---     else
---       win:perform_action(a.SendKey({key=key, mods=mods}), pane)
---     end
---   end
---   return {key=key, mods=mods, action=w.action_callback(callback)}
--- end
+--
+local function is_inside_vim(pane)
+	wezterm.log_info("changed")
+	return pane:get_user_vars().NVIM == "true" or pane:get_foreground_process_name():find("v")
+end
+
+local function is_outside_vim(pane)
+	return not is_inside_vim(pane)
+end
+
+local function bind_if(cond, key, mods, action)
+	wezterm.log_info("hello")
+	local function callback(win, pane)
+		if cond(pane) then
+			win:perform_action(action, pane)
+		else
+			win:perform_action(a.SendKey({ key = key, mods = mods }), pane)
+		end
+	end
+	return { key = key, mods = mods, action = w.action_callback(callback) }
+end
 -- a whole lotta keybindings
 config.leader = { key = "f", mods = "CTRL" }
 config.keys = {
 	-- move between panes
-	-- bind_if(is_outside_vim, 'h', 'CTRL', a.ActivatePaneDirection('Left')),
-	-- bind_if(is_outside_vim, 'j', 'CTRL', a.ActivatePaneDirection('Down')),
-	-- bind_if(is_outside_vim, 'k', 'CTRL', a.ActivatePaneDirection('Up')),
-	-- bind_if(is_outside_vim, 'l', 'CTRL', a.ActivatePaneDirection('Right')),
+	bind_if(is_outside_vim, "h", "CTRL", a.ActivatePaneDirection("Left")),
+	bind_if(is_outside_vim, "j", "CTRL", a.ActivatePaneDirection("Down")),
+	bind_if(is_outside_vim, "k", "CTRL", a.ActivatePaneDirection("Up")),
+	bind_if(is_outside_vim, "l", "CTRL", a.ActivatePaneDirection("Right")),
 	{
 		key = "h",
 		mods = "LEADER",
@@ -85,27 +92,27 @@ config.keys = {
 		mods = "LEADER",
 		action = act.ActivateTabRelative(1),
 	},
-	{
-		key = "h",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Left"),
-	},
-
-	{
-		key = "j",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Down"),
-	},
-	{
-		key = "k",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "l",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Right"),
-	},
+	-- {
+	-- 	key = "h",
+	-- 	mods = "CTRL",
+	-- 	action = act.ActivatePaneDirection("Left"),
+	-- },
+	--
+	-- {
+	-- 	key = "j",
+	-- 	mods = "CTRL",
+	-- 	action = act.ActivatePaneDirection("Down"),
+	-- },
+	-- {
+	-- 	key = "k",
+	-- 	mods = "CTRL",
+	-- 	action = act.ActivatePaneDirection("Up"),
+	-- },
+	-- {
+	-- 	key = "l",
+	-- 	mods = "CTRL",
+	-- 	action = act.ActivatePaneDirection("Right"),
+	-- },
 
 	-- mode until we cancel that mode.
 	{
