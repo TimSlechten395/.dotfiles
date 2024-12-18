@@ -26,7 +26,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # export PATH="$PATH:$HOME/.zig/zig-linux-x86_64-0.13.0-dev.363+7fc3fb955"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/nvim-linux64/bin:$PATH"
-# export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 source $HOME/.cargo/env
 

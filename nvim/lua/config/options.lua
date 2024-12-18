@@ -6,6 +6,12 @@ local opt = vim.opt
 -- disable standard file tree
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+-- LSP Server to use for Rust.
+-- Set to "bacon-ls" to use bacon-ls instead of rust-analyzer.
+-- only for diagnostics. The rest of LSP support will still be
+-- provided by rust-analyzer.
+vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+vim.g.snacks_animate = false
 
 opt.shiftwidth = 4
 opt.tabstop = 4
