@@ -14,16 +14,20 @@
     ~/.config/nvim: nvim
     ~/.config/starship.toml: starship.toml
 
-    /mnt/c/Users/timsl/.wezterm.lua: 
-      path: wezterm.lua
-      if: test -d /mnt/c/Users/timsl
-
-    /mnt/c/Users/Tim/.wezterm.lua: 
-      path: wezterm.lua
-      if: test -d /mnt/c/Users/Tim
+    # /mnt/c/Users/timsl/.wezterm.lua: 
+    #   path: wezterm.lua
+    #   if: test -d /mnt/c/Users/timsl
+    #
+    # /mnt/c/Users/Tim/.wezterm.lua: 
+    #   path: wezterm.lua
+    #   if: test -d /mnt/c/Users/Tim
 
 - shell:
-    - [rm /mnt/c/Users/Tim/.config/wezterm && cp wezterm /mnt/c/Users/Tim/.config/wezterm]
-    - [rm /mnt/c/Users/timsl/.config/wezterm && cp wezterm.lua /mnt/c/Users/timsl/.config/wezterm]
+    - [rm /mnt/c/Users/Tim/.config/wezterm] 
+    - [rm /mnt/c/Users/Tim/.wezterm.lua] 
+    - [cp -r wezterm /mnt/c/Users/Tim/.config/wezterm]
+    - [rm /mnt/c/Users/timsl/.config/wezterm] 
+    - [rm /mnt/c/Users/timsl/.wezterm.lua] 
+    - [cp -r wezterm.lua /mnt/c/Users/timsl/.config/wezterm]
 
 
