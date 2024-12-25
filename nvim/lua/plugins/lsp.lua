@@ -134,6 +134,9 @@ return {
               parameterHints = { enable = false },
               closingBraceHints = { enable = false },
             },
+            rustc = {
+              source = "discover",
+            },
           },
         },
       },

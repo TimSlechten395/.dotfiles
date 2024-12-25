@@ -28,6 +28,8 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/nvim-linux64/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="$HOME/programming/rust/examples/rust:$PATH"
+
 source $HOME/.cargo/env
 
 # zoxide setup
