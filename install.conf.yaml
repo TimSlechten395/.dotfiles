@@ -23,11 +23,11 @@
     #   if: test -d /mnt/c/Users/Tim
 
 - shell:
-    - [rm /mnt/c/Users/Tim/.config/wezterm] 
-    - [rm /mnt/c/Users/Tim/.wezterm.lua] 
-    - [cp -r wezterm /mnt/c/Users/Tim/.config/wezterm]
-    - [rm /mnt/c/Users/timsl/.config/wezterm] 
+    - [rm -rf /mnt/c/Users/Tim/.config/wezterm] 
+    - [rm -rf /mnt/c/Users/timsl/.config/wezterm] 
+    - [rm  /mnt/c/Users/Tim/.wezterm.lua] 
     - [rm /mnt/c/Users/timsl/.wezterm.lua] 
-    - [cp -r wezterm.lua /mnt/c/Users/timsl/.config/wezterm]
+    - [cp -r wezterm /mnt/c/Users/Tim/.config/wezterm]
+    - [cp -r wezterm /mnt/c/Users/timsl/.config/wezterm]
 
 

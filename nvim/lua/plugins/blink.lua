@@ -1,5 +1,7 @@
 return {
   "saghen/blink.cmp",
+  ---@module 'blink.cmp'
+  ---@param opts blink.cmp.Config
   opts = function(_, opts)
     opts.sources.cmdline = function()
       local type = vim.fn.getcmdtype()
@@ -13,5 +15,11 @@ return {
       end
       return {}
     end
+    opts.keymap = {
+      preset = "enter",
+      cmdline = {
+        preset = "super-tab",
+      },
+    }
   end,
 }

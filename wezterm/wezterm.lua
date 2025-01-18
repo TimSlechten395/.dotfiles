@@ -12,13 +12,21 @@ config.scrollback_lines = 10000
 
 config.default_cwd = "/home/tim"
 
-config.wsl_domains = {
-	{
-		name = "WSL:Debian",
-		distribution = "Debian",
-		default_cwd = "/home/tim",
-	},
-}
+-- config.wsl_domains = {
+-- 	{
+-- 		name = "WSL:Debian",
+-- 		distribution = "Debian",
+-- 		default_cwd = "/home/tim",
+-- 	},
+-- }
+
+-- config.unix_domains = {
+-- 	{
+-- 		name = "unix",
+-- 	},
+-- }
+
+-- config.default_gui_startup_args = { "connect", "unix" }
 
 -- For example, changing the color scheme
 config.color_scheme = "Tokyo Night"
@@ -261,6 +269,7 @@ config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_max_width = 32
 config.unzoom_on_switch_pane = true
+config.max_fps = 120
 
 -- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 -- 	-- local title = M.title(tab, max_width)

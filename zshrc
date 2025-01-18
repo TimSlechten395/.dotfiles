@@ -38,7 +38,7 @@ eval "$(zoxide init zsh)"
 # aliases
 alias v='nvim'
 alias reload='source ~/.zshrc'
-alias xdg-open= 'wslview'
+alias xdg-open='wslview'
 
 
 fpath+=~/.zfunc
